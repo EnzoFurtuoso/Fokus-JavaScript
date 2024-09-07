@@ -1,14 +1,13 @@
 :root {
     --color-primary: #123456;
-    --color-secundary: #FFF;
-    --blue-royal: #144480;
-    --background-card-timer: rgba(20, 68, 128, 0.30);
+    --color-secondary: #FFF;
+    --azul-royal: #144480;
+    --fundo-card-timer: rgba(20, 68, 128, 0.30);
     --lils: #B872FF;
-    --fundo-modal: #1b293B;
     --linear-botes: linear-gradient(180deg, #B872FF 0%, #144480 100%);
     --azul-profundo: #01080E;
     --fundo-card: rgba(255, 255, 255, 0.50);
-    --fundo-card-concluido: rgba(0, 244, 191, 0.40)
+    --fundo-card-concludo: rgba(0, 244, 191, 0.40);
 }
 
 [data-contexto="foco"] {
@@ -36,7 +35,8 @@ html {
 
 body {
     min-height: 100vh;
-    background: url("./imagens/pattern.png");
+    background: url("/imagens/pattern.png");
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 150%;
     font-size: 5.2rem;
     font-style: normal;
-    color: var(--color-secundary);
+    color: var(--color-secondary);
     font-weight: 200;
     max-width: 46rem;
 }
@@ -80,8 +80,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .app__card {
     border-radius: 3.2rem;
-    border: 0.2rem solid var(--blue-royal);
-    background: var(--background-card-timer);
+    border: 0.2rem solid var(--azul-royal);
+    background: var(--fundo-card-timer);
     padding: 2.4rem;
     margin: 8rem 0;
     width: 59rem;
@@ -99,14 +99,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app__card-button {
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
     background: none;
     padding: 0.8rem;
-    color: var(--color-secundary);
+    color: var(--color-secondary);
     border: none;
     cursor: pointer;
     outline: inherit;
@@ -114,24 +114,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .app__card-button.active {
     border-radius: 0.8rem;
-    background: var(--blue-royal);
+    background: var(--azul-royal);
     font-weight: 600;
 }
 
 .app__card-timer {
-    color: var(--color-secundary);
+    color: var(--color-secondary);
     text-align: center;
-    font-family: 'Unbounded';
+    font-family: Unbounded;
     font-size: 12rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin: 3.2rem;
     text-align: center;
 }
 
 .app__card-list-label {
-    color: var(--color-secundary);
-    font-family: 'Montserrat';
+    color: var(--color-secondary);
+    font-family: Montserrat;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
@@ -146,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 .app__card-primary-button {
     padding: 0.8rem;
     width: 12rem;
-    color: var(--color-secundary);
+    color: var(--color-secondary);
     border: none;
     cursor: pointer;
     outline: inherit;
@@ -172,22 +173,22 @@ h1, h2, h3, h4, h5, h6 {
 .app__footer-text {
     color: rgba(182, 182, 182, 0.8);
     text-align: center;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
 }
 
+/* toggle */
 .toggle {
     cursor: pointer;
     display: inline-block;
 }
 
-
 .toggle-switch {
     display: inline-block;
-    background: #CCC;
+    background: #ccc;
     border-radius: 1.6rem;
     width: 5.8rem;
     height: 3.2rem;
@@ -196,11 +197,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: background 0.25s;
 }
 
-.toggle-switch::before, .toggle-switch::after {
+.toggle-switch:before, .toggle-switch:after {
     content: "";
 }
 
-.toggle-switch::before {
+.toggle-switch:before {
     display: block;
     background: linear-gradient(to bottom, #fff 0%, #eee 100%);
     border-radius: 50%;
@@ -212,16 +213,15 @@ h1, h2, h3, h4, h5, h6 {
     transition: left 0.25s;
 }
 
-.toggle:hover .toggle-switch::before {
-    background: linear-gradient(to bottom, #FFF 0%, #FFF 100%);
+.toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
 }
-
 
 .toggle-checkbox:checked + .toggle-switch {
     background: var(--lils);
 }
 
-.toggle-checkbox:checked + .toggle-switch::before {
+.toggle-checkbox:checked + .toggle-switch:before {
     left: 3rem;
 }
 
@@ -230,6 +230,9 @@ h1, h2, h3, h4, h5, h6 {
     visibility: hidden;
 }
 
+/* fim - toggle */
+
+/* dropdown */
 .dropdown-container {
     position: relative;
 }
@@ -245,12 +248,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app__section-task-header__ul:hover,
-app__button-more:hover ~ .app__section-task-header__ul {
+.app_button-more:hover ~ .app__section-task-header__ul {
     display: block;
     text-align: right;
     border-radius: 0.8rem;
-    border: 0.2rem solid var(--blue-royal);
-    background: var(--fundo-modal);
+    border: 0.2rem solid var(--azul-royal, #144480);
+    background: var(--fundo-modal-2, #1B293B);
 }
 
 .app__section-task-header__li {
@@ -270,15 +273,18 @@ app__button-more:hover ~ .app__section-task-header__ul {
     gap: 0.8rem;
 }
 
+/* fim - dropdown */
 
-@media(max-width: 1024px) and (min-width: 768px) {
-    .app__section-banner-container{
+
+/* Para Tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .app__section-banner-container {
         width: 48rem;
     }
 }
 
-
-@media(max-width: 767px) {
+/* Para Celulares */
+@media (max-width: 767px) {
     .app__section-banner-container {
         width: 32rem;
     }
@@ -291,18 +297,15 @@ app__button-more:hover ~ .app__section-task-header__ul {
         font-size: 6rem;
     }
 
-    .app__card-timer {
-        font-size: 6rem;
-    }
-
     .app__section-active-task {
         gap: 2rem;
     }
 }
 
 .hidden {
-    /* display: none; */
+    display: none;
 }
+
 
 .app__section-task-container {
     display: flex;
@@ -345,7 +348,7 @@ app__button-more:hover ~ .app__section-task-header__ul {
     line-height: 150%;
 }
 
-.app__section-task-heading {
+.app__section-tasks-heading {
     font-size: 2.6rem;
     font-style: normal;
     font-weight: 400;
@@ -405,14 +408,13 @@ app__button-more:hover ~ .app__section-task-header__ul {
 }
 
 .app__section-task-list-item-complete.app__section-task-list-item {
-    background: var(--fundo-card-concluido);
+    background: var(--fundo-card-concludo);
     cursor: inherit;
 }
 
 .app__section-task-list-item-active.app__section-task-list-item {
     border: 2px solid #FFF;
 }
-
 
 .app__section-task-list-item-complete .app__section-task-icon-status circle {
     fill: #00F4BF;
@@ -425,13 +427,14 @@ app__button-more:hover ~ .app__section-task-header__ul {
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%;
+    line-height: 150%; 
     font-family: Montserrat;
 }
 
 .app__form-label {
     color: var(--azul-profundo);
     font-family: Unbounded;
+    font-size: 2.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
@@ -454,6 +457,10 @@ app__button-more:hover ~ .app__section-task-header__ul {
     margin-top: 3.2rem;
 }
 
+.app__form-footer .splitter {
+    flex-grow: 1;
+}
+
 .app__form-footer__button {
     border: none;
     cursor: pointer;
@@ -470,11 +477,10 @@ app__button-more:hover ~ .app__section-task-header__ul {
     gap: 0.8rem;
 }
 
-
 .app__form-footer__button--confirm {
     border-radius: 3.2rem;
     padding: 0.8rem 2.4rem;
-    color: #FFF;
+    color: #fff;
     background: var(--azul-profundo);
 }
 
@@ -488,6 +494,8 @@ app__button-more:hover ~ .app__section-task-header__ul {
     justify-content: center;
     gap: 1rem;
     color: var(--lils);
+    border-radius: 3.2rem;
+    border: 0.2rem solid var(--lils);
     width: 100%;
     margin-top: 4rem;
     padding: 1.8rem;
@@ -497,7 +505,7 @@ app__button-more:hover ~ .app__section-task-header__ul {
     line-height: 150%;
 }
 
-.app__button--edit:disabled {
+.app_button-edit:disabled {
     color: #e6e6e6;
     opacity: 0.8;
     cursor: not-allowed;
